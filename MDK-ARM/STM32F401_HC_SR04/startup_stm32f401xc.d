@@ -1,1 +1,0 @@
-stm32f401_hc_sr04\startup_stm32f401xc.o: startup_stm32f401xc.s
