@@ -12,7 +12,6 @@ void hcsr04_init(TIM_HandleTypeDef *htim, GPIO_TypeDef *gpio_port, uint16_t gpio
 	hcsr04_tim = htim;
 	hcsr04_gpio_port = gpio_port;
 	hcsr04_gpio_pin = gpio_pin;
-	
 	HAL_TIM_IC_Start_IT(htim, TIM_CHANNEL_2);
 }
 

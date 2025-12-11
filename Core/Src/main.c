@@ -99,7 +99,7 @@ int main(void)
   while (1)
   {
 		hcsr04_triger();
-		volatile float data = hcsr04_get_cm(1000000);
+		volatile float data = hcsr04_get_cm(1000000 /* Freq that used to caculate distance*/);
 		
     /* USER CODE END WHILE */
 

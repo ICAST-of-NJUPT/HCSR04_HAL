@@ -51,8 +51,8 @@ Section Cross References
     tim.o(i.MX_TIM1_Init) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_ConfigClockSource) for HAL_TIM_ConfigClockSource
     tim.o(i.MX_TIM1_Init) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_IC_Init) for HAL_TIM_IC_Init
     tim.o(i.MX_TIM1_Init) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_SlaveConfigSynchro) for HAL_TIM_SlaveConfigSynchro
-    tim.o(i.MX_TIM1_Init) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_IC_ConfigChannel) for HAL_TIM_IC_ConfigChannel
     tim.o(i.MX_TIM1_Init) refers to stm32f4xx_hal_tim_ex.o(i.HAL_TIMEx_MasterConfigSynchronization) for HAL_TIMEx_MasterConfigSynchronization
+    tim.o(i.MX_TIM1_Init) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_IC_ConfigChannel) for HAL_TIM_IC_ConfigChannel
     tim.o(i.MX_TIM1_Init) refers to tim.o(.bss) for .bss
     stm32f4xx_it.o(i.SysTick_Handler) refers to stm32f4xx_hal.o(i.HAL_IncTick) for HAL_IncTick
     stm32f4xx_it.o(i.TIM1_CC_IRQHandler) refers to stm32f4xx_hal_tim.o(i.HAL_TIM_IRQHandler) for HAL_TIM_IRQHandler
@@ -1320,7 +1320,7 @@ Image Symbol Table
     HAL_TIM_TriggerCallback                  0x080012c5   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_TriggerCallback)
     HardFault_Handler                        0x080012c7   Thumb Code     2  stm32f4xx_it.o(i.HardFault_Handler)
     MX_GPIO_Init                             0x080012c9   Thumb Code    70  gpio.o(i.MX_GPIO_Init)
-    MX_TIM1_Init                             0x08001319   Thumb Code   200  tim.o(i.MX_TIM1_Init)
+    MX_TIM1_Init                             0x08001319   Thumb Code   198  tim.o(i.MX_TIM1_Init)
     MemManage_Handler                        0x080013e9   Thumb Code     2  stm32f4xx_it.o(i.MemManage_Handler)
     NMI_Handler                              0x080013eb   Thumb Code     2  stm32f4xx_it.o(i.NMI_Handler)
     PendSV_Handler                           0x080013ed   Thumb Code     2  stm32f4xx_it.o(i.PendSV_Handler)
@@ -1555,10 +1555,10 @@ Image component sizes
        128         20          0          0          0       2457   stm32f4xx_hal_tim_ex.o
         32          6          0          0          0       4567   stm32f4xx_it.o
         16          4         16          4          0       1103   system_stm32f4xx.o
-       328         20          0          0         72       1894   tim.o
+       328         22          0          0         72       1890   tim.o
 
     ----------------------------------------------------------------------
-      5178        350        452         36       1608     491808   Object Totals
+      5178        352        452         36       1608     491804   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          8          0          0          0          0          0   (incl. Padding)
 
@@ -1619,9 +1619,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7132        526        452         36       1708     487264   Grand Totals
-      7132        526        452         36       1708     487264   ELF Image Totals
-      7132        526        452         36          0          0   ROM Totals
+      7132        528        452         36       1708     487260   Grand Totals
+      7132        528        452         36       1708     487260   ELF Image Totals
+      7132        528        452         36          0          0   ROM Totals
 
 ==============================================================================
 
