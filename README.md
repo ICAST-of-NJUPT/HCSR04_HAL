@@ -6,6 +6,7 @@
 * 首先在STM32CubeMX中新建工程，按需配置通用定时器的时钟源。
 * 对于较新版本的STM32CubeMX，配置 **Combined Channels** 为 **PWM Input on CH1** ，并启用输入捕获中断
 ![项目截图](image.png "项目截图")
+* 对于旧版本，配置从模式为复位模式，触发源TI1FP1，CH1 CH2 分别为 ic direct（上升沿）、 ic indirect（下降沿），并启用捕获中断
 * 启用一个推挽输出的 GPIO 引脚
 
 * 在 **HAL_TIM_IC_CaptureCallback** 中调用 **hcsr04_ic_handler**
