@@ -3,7 +3,8 @@
 
 #include "main.h"
 
-void hcsr04_init(TIM_HandleTypeDef *htim, GPIO_TypeDef *gpio_port, uint16_t gpio_pin);
+/* PWM in CH1 (CH1 rising edge, CH2 falling edge): is_ch1 = 1; PWM in CH2(CH2 rising edge, CH1 falling edge): is_ch1 = 0; */
+void hcsr04_init(TIM_HandleTypeDef *htim, GPIO_TypeDef *gpio_port, uint16_t gpio_pin, int is_ch1);
 
 /* Triger a measure */
 void hcsr04_triger();

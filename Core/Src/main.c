@@ -95,7 +95,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
-	hcsr04_init(&htim1, GPIOA, GPIO_PIN_9);
+	hcsr04_init(&htim1, GPIOA, GPIO_PIN_9, 1);
   while (1)
   {
 		hcsr04_triger();

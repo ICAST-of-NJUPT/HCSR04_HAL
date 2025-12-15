@@ -4,15 +4,18 @@ static TIM_HandleTypeDef *hcsr04_tim = NULL; // htim1 /2 ...
 static GPIO_TypeDef *hcsr04_gpio_port = NULL; // GPIOA /B /C ...
 static uint16_t hcsr04_gpio_pin = 0; // GPIO_PIN_0 /1 /2 ...
 
+static int isch1;
+
 static uint32_t hcsr04_result = 0;
 static int hcsr04_data_updated = 0;
 
-void hcsr04_init(TIM_HandleTypeDef *htim, GPIO_TypeDef *gpio_port, uint16_t gpio_pin)
+void hcsr04_init(TIM_HandleTypeDef *htim, GPIO_TypeDef *gpio_port, uint16_t gpio_pin, int is_ch1)
 {
 	hcsr04_tim = htim;
 	hcsr04_gpio_port = gpio_port;
 	hcsr04_gpio_pin = gpio_pin;
-	HAL_TIM_IC_Start_IT(htim, TIM_CHANNEL_2);
+	isch1 = is_ch1;
+	HAL_TIM_IC_Start_IT(htim, isch1 ? TIM_CHANNEL_2 : TIM_CHANNEL_1);
 }
 
 void hcsr04_triger()
@@ -25,8 +28,8 @@ void hcsr04_triger()
 void hcsr04_ic_handler(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == hcsr04_tim->Instance) {
-		if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
-			hcsr04_result = __HAL_TIM_GetCompare(htim, TIM_CHANNEL_2);
+		if (htim->Channel == (isch1 ? HAL_TIM_ACTIVE_CHANNEL_2 : HAL_TIM_ACTIVE_CHANNEL_1)) {
+			hcsr04_result = __HAL_TIM_GetCompare(htim, isch1 ? TIM_CHANNEL_2 : TIM_CHANNEL_1);
 			hcsr04_data_updated = 1;
 		}
 	}

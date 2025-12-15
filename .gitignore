@@ -1,0 +1,9 @@
+MDK-ARM/*/*.o
+MDK-ARM/*/*.d
+MDK-ARM/*/*.lnp
+MDK-ARM/*/*.axf
+MDK-ARM/*/*.htm
+MDK-ARM/*/*.hex
+MDK-ARM/*/*.dep
+MDK-ARM/*.lst
+MDK-ARM/STM32F401_HC_SR04.uvguix.Lenovo

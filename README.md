@@ -33,7 +33,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
-  hcsr04_init(&htim1, GPIOA, GPIO_PIN_9);
+  hcsr04_init(&htim1, GPIOA, GPIO_PIN_9, 1);
   while (1)
   {
 		hcsr04_triger();
